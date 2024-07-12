@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.ncr.proto.gen";
+option java_outer_classname = "Endpoint";
+
+service KdsService{
+    rpc Sync(SyncRequest) returns (SyncResponse) {}
+}
+
+message SyncRequest {
+    string itemName = 1;
+    string itemQnty = 2;
+    string itemPrice = 3;
+}
+
+message SyncResponse {
+    string value = 1;
+}
